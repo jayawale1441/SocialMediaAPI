@@ -10,10 +10,9 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @Entity
-public class UserProfile {
+public class Likes {
 	@Id
-	private String userId;
-	private String bio;
-	private String status;	
-	
+	@GeneratedValue
+	private int likeId;
+	private String likeBy;
 }

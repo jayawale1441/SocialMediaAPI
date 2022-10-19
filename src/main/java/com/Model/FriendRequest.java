@@ -1,4 +1,4 @@
-package com.Model;
+package com.model;
 
 import java.util.Date;
 import javax.persistence.*;
@@ -16,8 +16,8 @@ public class FriendRequest {
 	@Id
 	@GeneratedValue
 	private int requestId;
-	private String by;
-	private String to;
+	private String requestedBy;
+	private String requestedTo;
 	private Date date;
 	private enum status{
 		ACCEPTED,

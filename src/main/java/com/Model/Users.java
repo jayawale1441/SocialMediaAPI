@@ -1,4 +1,5 @@
-package com.Model;
+package com.model;
+
 import javax.persistence.*;
 import javax.persistence.Id;
 
@@ -10,9 +11,10 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @Entity
-public class Like {
+public class Users {
 	@Id
-	@GeneratedValue
-	private int likeId;
-	private String likeBy;
+	private String userId;
+	private String emailId;
+	private String password;
+	private int age;
 }

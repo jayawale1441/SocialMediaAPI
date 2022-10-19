@@ -1,4 +1,4 @@
-package com.Model;
+package com.model;
 
 import javax.persistence.*;
 import javax.persistence.Id;
@@ -11,7 +11,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @Entity
-public class Group {
+public class Groups {
 	
 	@Id
 	@GeneratedValue
