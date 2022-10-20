@@ -4,6 +4,8 @@ import java.util.Date;
 import javax.persistence.*;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.*;
 
 @Getter

@@ -4,6 +4,7 @@ import java.util.*;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,12 +26,13 @@ public class UserController  {
 		return umap;
 	}
 	
+	
 
 	
 	@GetMapping("/searchbyuserid/{userId}")
 	public String getUser(@PathVariable String userId) throws NoUserFoundException {
 		try {
-			String u=userv.getUserByEmailId(userId);
+			String u=userv.getUserByUserId(userId);
 			return u;
 			
 		}catch(NoUserFoundException e) {
@@ -39,5 +41,21 @@ public class UserController  {
 		
 		
 	}
+	
+	
+	
+	@GetMapping("/findallfriends/{userId}")
+	public List<String> getfriendlist(@PathVariable String userId ){
+		List<String> friendList=userv.getFriendList(userId);
+		return friendList;
+	}
+	
+	
+	@DeleteMapping("/deleteafriend/{userId}/{friendId}")
+	public List<String> deletefriend(@PathVariable String userId, @PathVariable String friendId){
+		List<String> friendList=userv.deletefriend(userId,friendId);
+		return friendList;
+	}
+	
 
 }
