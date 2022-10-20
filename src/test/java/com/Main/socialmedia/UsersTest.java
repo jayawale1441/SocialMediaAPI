@@ -44,7 +44,7 @@ class UsersTest {
 		Assertions.assertEquals(HttpStatus.OK, res.getStatusCode());
 	}
 
-	// DAO Test for searching by UserId
+	// DAO Test for searching by User UserId
 	@Test
 	void testGetByUserId() {
 		Users u1 = new Users("A123", "john@gmail.com", "john123", 25);
@@ -65,5 +65,17 @@ class UsersTest {
 		ResponseEntity<String> res = temp.getForEntity(uri, String.class);
 		Assertions.assertEquals(HttpStatus.OK, res.getStatusCode());
 	}
-
 }
+
+/*
+ * if any part of your controller has exception handling make controller advice
+ * 
+ * if you're using try catch block
+ *and define your own custom exception class
+ *in com.controller make ControllerAdvisor class
+ *
+ *@ExceptionHnadler(Customerexceptionclassname.class)
+ *public ResponseEntityt<Object> handleexception(Customerexception e, WebRequest r){
+ *return new ResponseEntityt <>(e.toString,HttpStatus.NOT_FOUND);
+ *}
+ */
