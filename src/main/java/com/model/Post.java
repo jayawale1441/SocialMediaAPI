@@ -1,6 +1,8 @@
 package com.model;
 
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.*;
 import javax.persistence.Id;
 
@@ -19,4 +21,13 @@ public class Post {
 	private String postedBy;
 	private Date date;
 	private String description;
+	private PostStatus status;
+    public enum PostStatus {
+		ACTIVE,
+		BLOCKED;
+	}
+	@ElementCollection(targetClass=Integer.class)
+	private List<Integer> comments;
+	@ElementCollection(targetClass=Integer.class)
+	private List<Integer> likes;
 }

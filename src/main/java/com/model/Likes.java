@@ -4,8 +4,9 @@ import javax.persistence.Id;
 
 import lombok.*;
 
-@Getter
+
 @Setter
+@Getter
 @NoArgsConstructor
 @ToString
 @AllArgsConstructor

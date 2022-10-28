@@ -4,6 +4,8 @@ import java.util.Date;
 import javax.persistence.*;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.*;
 
 @Getter
@@ -15,14 +17,17 @@ import lombok.*;
 public class Forum {
 	
 	@Id
-	@GeneratedValue
-	private int forumId;
+	private String forumId;
 	private String forumName;
 	private String createdBy;
-	private Date createdOn;
-	private enum status{
+	private String createdOn;
+	private Status status = Status.PENDING;
+	/*public enum ForumStatus{
 		ACTIVE,
 		BLOCKED,
 		PENDING;		
-	};
+	}*/
+	@JsonIgnore
+	@ManyToOne
+	private Users users;
 }

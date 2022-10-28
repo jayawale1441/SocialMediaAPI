@@ -3,6 +3,8 @@ package com.model;
 import javax.persistence.*;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.*;
 
 @Getter
@@ -14,15 +16,22 @@ import lombok.*;
 public class Groups {
 	
 	@Id
-	@GeneratedValue
-	private int groupId;
+	private String groupId;
 	private String groupName;
-	private enum status{
+	private String createdBy;
+	private Status status=Status.PENDING;
+	/*public enum GroupStatus{
 		ACTIVE,
 		BLOCKED,
 		PENDING;
 	}
-	private String createdBy;
+	*/
+	@JsonIgnore
+	@ManyToOne
+	private Users users;
+	
+	
+	
 	
 	
 }
